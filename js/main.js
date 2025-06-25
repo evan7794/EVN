@@ -443,35 +443,3 @@ function showAlert(message, type, form) {
 
 
 
-
-// Smooth scroll animaton 
-document.addEventListener('DOMContentLoaded', () => {
-    const navItems = document.querySelectorAll('.nav-item');
-    
-    // Set initial styles for animation
-    navItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'all 0.5s ease-in-out';
-        
-        // Staggered animation delay
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-        }, 200 * index); // 200ms delay between each item
-    });
-
-    // Hover effect
-    navItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-2px)';
-            item.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0)';
-            item.style.boxShadow = 'none';
-        });
-    });
-});
-
